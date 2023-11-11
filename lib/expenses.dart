@@ -49,7 +49,7 @@ class _ExpensesState extends State<Expenses> {
         children: [
           const Text('The chart'),
           Expanded(
-            child: ExpensesList(expenses: _registeredExpenses),
+            child: ExpensesList(expenses: _registeredExpenses, onRemoveExpense: _removeExpense,),
           )
         ],
       ),
@@ -67,6 +67,12 @@ class _ExpensesState extends State<Expenses> {
   void _addExpense(Expense expense){
     setState(() {
       _registeredExpenses.add(expense);
+    });
+  }
+
+  void _removeExpense(Expense expense){
+    setState(() {
+      _registeredExpenses.remove(expense);
     });
   }
 }
