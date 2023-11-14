@@ -21,24 +21,21 @@ class ExpensesList extends StatelessWidget {
           expenses[index],
         ),
         background: Container(
-          color: Theme.of(context).colorScheme.error,
+          color: Colors.error,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          alignment: Alignment.centerRight,
+          child: const Text(
+          'Delete',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.normal,
+              fontSize: 30,
+              ),
+            ),
           margin: EdgeInsets.symmetric(
             horizontal: Theme.of(context).cardTheme.margin!.horizontal,
           ),
         ),
-        secondaryBackground: Container(
-        color: Theme.of(context).colorScheme.error,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        alignment: Alignment.centerRight,
-        child: const Text(
-          'Delete',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.normal,
-            fontSize: 30,
-          ),
-        ),
-      ),
         onDismissed: (direction) {
           onRemoveExpense(expenses[index]);
         },

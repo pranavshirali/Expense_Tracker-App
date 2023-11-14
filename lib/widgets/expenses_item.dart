@@ -24,7 +24,7 @@ class ExpensesItem extends StatelessWidget {
             Row(
               children: [
                 Text(
-                    '\$${expense.amout.toStringAsFixed(2)}'), //Limits decimals to 2 values or any
+                    '\$${expense.amount.toStringAsFixed(2)}'), //Limits decimals to 2 values or any
                 const Spacer(),
                 Row(
                   children: [
