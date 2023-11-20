@@ -21,7 +21,7 @@ class ExpensesList extends StatelessWidget {
           expenses[index],
         ),
         background: Container(
-          color: Colors.error,
+          color: Theme.of(context).colorScheme.error.withOpacity(0.75),
           padding: const EdgeInsets.symmetric(horizontal: 20),
           alignment: Alignment.centerRight,
           child: const Text(
