@@ -57,27 +57,31 @@ class _ExpensesState extends State<Expenses> {
           ),
         ],
       ),
-      body:width < 600 ? Column(
-        children: [
-          Chart(expenses: _registeredExpenses),
-          Expanded(
-            child: mainContent,
-          )
-        ],
-      )
+      body: width < 600
+          ? Column(
+              children: [
+                Chart(expenses: _registeredExpenses),
+                Expanded(
+                  child: mainContent,
+                )
+              ],
+            )
           : Row(
-        children: [
-          Chart(expenses: _registeredExpenses),
-          Expanded(
-            child: mainContent,
-          )
-        ],
-      ),
+              children: [
+                Expanded(
+                  child: Chart(expenses: _registeredExpenses),
+                ),
+                Expanded(
+                  child: mainContent,
+                )
+              ],
+            ),
     );
   }
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      useSafeArea: true,
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
@@ -108,7 +112,7 @@ class _ExpensesState extends State<Expenses> {
                 _registeredExpenses.insert(expenseIndex, expense);
               },
             );
-          },
+          }, 
         ),
       ),
     );
